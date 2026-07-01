@@ -123,7 +123,3 @@ For a quick, production-like setup using Docker:
 ### Obtaining an API Key
 
 On first run, OpenWA generates a cryptographically random admin API key and writes it to `data/.api-key` (or `/app/data/.api-key` inside the API container when using Docker). This key is also printed in the startup logs. For local development, you can set `ALLOW_DEV_API_KEY=true` in your `.env` file to seed the well-known, insecure `dev-admin-key`.
-
-ns.md
-    └── 23-plugin-sandboxing.md
-```
