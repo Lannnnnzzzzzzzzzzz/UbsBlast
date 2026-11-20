@@ -254,7 +254,7 @@ export class WhatsAppWebJsAdapter extends EventEmitter implements IWhatsAppEngin
       resolveBounded = resolve;
     });
     const slotHeld = this.inboundLimiter.run(() => {
-      const download = msg.downloadMedia();
+      const download = msg.downloadMedia().then(m => m ?? null);
       resolveBounded(
         withInboundDownloadTimeout(download, inboundMediaTimeoutMs(), () =>
           this.logger.warn(

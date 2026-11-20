@@ -120,7 +120,7 @@ export function Blast() {
   const [sending, setSending] = useState(false);
   const [activeBatches, setActiveBatches] = useState<Array<{ sessionId: string; batchId: string }>>([]);
   const [batchStatus, setBatchStatus] = useState<BatchStatusType | null>(null);
-  const pollRef = useRef<ReturnType<typeof setInterval>>();
+  const pollRef = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // auto-select first ready session
